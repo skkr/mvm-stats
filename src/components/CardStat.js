@@ -11,8 +11,8 @@ const CardStat = props => {
         <i className="material-icons link-light">help_outline</i>
       </Link>
       <i className="material-icons material-icons material-icons--xl">{icon}</i>
-      <h1 className="h5 card-title text-muted"><strong>{mainTitile}</strong></h1>
-      <p className={`card-text text--xl ${textColor}`}> <strong>{mainValue}</strong></p>
+      <h1 className="h5 text-muted"><strong>{mainTitile}</strong></h1>
+      <p className={`font--alt text--xl ${textColor}`}> <strong>{mainValue}</strong></p>
     </div>
   )
 }

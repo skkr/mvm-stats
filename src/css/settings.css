@@ -53,42 +53,58 @@ The colors used on the app are defined as variables in `settings.css`.
 
 ```example:color
 @color: #0074A0           @name: --colorLink
-@color: #F9F9F9           @name: --colorBG
 @color: rgba(0,0,0,.13)   @name: --shadowColor
 @color: rgba(0,0,0,.07)   @name: --shadowColorSubtle
 ```
 */
 
 /* Dependencies */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,600,800');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,800');
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://cdn.rawgit.com/ShakrMedia/tuesday/master/build/tuesday.min.css');
 
 :root {
-  --fontPrimary: 'Catamaran', sans-serif;
+  --fontPrimary: 'Raleway', sans-serif;
+  --fontSecondary: 'Catamaran', sans-serif;
 
-  /* colors */
-  --colorPrimary: #129697;
-  --colorAccent: #48ddca;
-  --colorSecondary: #5F6A6F;
-  --colorSuccess: #55c46e;
-  --colorDanger: #F54D6F;
+  /* brand colors */
+  --brandGreen: #00DF9E;
+  --brandGreen--Subtle: #1AC592;
+  --brandBlue: #0B8FDF;
+  --brandBlack: #191919;
+  --brandGradient: linear-gradient(135deg,  var(--brandGreen) 0%, var(--brandBlue) 100%);
+
+  --altGreen: #02FFB3;
+  --altTeal: #0AD7DF;
+  --altBlue: #0948E0;
+  --altBlue--Dark: #0948E0;
+  --altPurple: #9F09E0;
+  --altPurple--Dark: #5709DF;
+  --altMagenta: #DF097E;
+
+  /* app colors */
+  --colorPrimary: var(--brandGreen);
+  --colorAccent: var(--brandBlue);
+  --colorSecondary: var(--brandGreen--Subtle);
+  --colorSuccess: var(--altGreen);
+  --colorDanger: var(--altMagenta);
   --colorWarning: #FACE5D;
-  --colorInfo: #0aa8ca;
-  --colorLight: #CBCCCC;
-  --colorDark: #0d989d;
+  --colorInfo: var(--altTeal);
+  --colorLight: #DEDEDE;
+  --colorDark: var(--brandBlack);
   --colorMuted: #878f97;
   --colorWhite: #fff;
 
-  --colorLink: #0074A0;
-  --colorBG: #F9F9F9;
+  --colorLink: var(--altBlue--Dark);
+  --colorBG: #E5E5E5;
 
   /* specific colors */
-  --shadowColor: rgba(0,0,0,.13);
-  --shadowColorSubtle: rgba(0,0,0,.07);
+  --shadowColor: rgba(0,0,0,.2);
+  --shadowColor--subtle: rgba(0,0,0,.07);
 
   /* shadows */
-  --shadow: 10px 10px 90px var(--shadowColor), 1px 5px 30px var(--shadowColorSubtle);
-  --shadowSubtle: 5px 5px 20px var(--shadowColorSubtle);
+  --shadow: 2px 2px 20px var(--shadowColor--subtle);
+  --shadow--xl: 5px 5px 40px var(--shadowColor), 1px 5px 20px var(--shadowColor--subtle);
 }

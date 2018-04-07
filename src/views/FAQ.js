@@ -61,7 +61,7 @@ export default class FAQ extends Component {
     return (
       <div id="app-content">
 
-        <div id="app-hero" className="app-hero--compact">
+        <div id="app-hero">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -76,7 +76,7 @@ export default class FAQ extends Component {
 
           <div className="row">
             <div className="col text-center text-lg-right">
-              <i class="fas fa-caret-square-left text-info"></i> <Link className="link-muted" to="/">Back to home</Link>
+              <i class="fas fa-caret-square-left text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
             </div>
           </div>
 
@@ -93,7 +93,7 @@ export default class FAQ extends Component {
                   <React.Fragment key={question[0]}>
                     <h3>
                       <i className="fas fa-arrow-right fa-xs text-danger  animated tdFadeInRight"></i>&nbsp;
-                      <strong className="text-secondary  animated tdFadeIn">{question[0]}</strong>
+                      <strong className="animated tdFadeIn">{question[0]}</strong>
                     </h3>
                     <p className="text--lg  animated tdFadeIn">{question[1]}</p>
                     <hr className="mb-4"/>
@@ -102,7 +102,7 @@ export default class FAQ extends Component {
               }
               <h3>
                 <i className="fas fa-arrow-right fa-xs text-danger  animated tdFadeInRight"></i>&nbsp;
-                <strong className="text-secondary  animated tdFadeIn">Generate Transactions Data</strong>
+                <strong className="animated tdFadeIn">Generate Transactions Data</strong>
               </h3>
               <form className="col-4">
                 <div className="form-group">
@@ -111,13 +111,13 @@ export default class FAQ extends Component {
                 </div>
               </form>
               <h4>
-                <strong className="text-secondary  animated tdFadeIn">First Transaction</strong>
+                <strong className="animated tdFadeIn">First Transaction</strong>
               </h4>
               <p className="text--lg  animated tdFadeIn">To: <strong>lif.windingtree.eth - 0xeb9951021698b42e4399f9cbb6267aa35f82d59d</strong></p>
               <p className="text--lg  animated tdFadeIn">Gas: <small>100000</small></p>
               <p className="text--lg  animated tdFadeIn">Data: <small>{self.state.approveData}</small></p>
               <h4>
-                <strong className="text-secondary  animated tdFadeIn">Second Transaction</strong>
+                <strong className="animated tdFadeIn">Second Transaction</strong>
               </h4>
               <p className="text--lg  animated tdFadeIn">To: <strong>mvm.windingtree.eth - 0x27218c41e1054dC0484ACD2aD35DEF0ffd17782A</strong></p>
               <p className="text--lg  animated tdFadeIn">Gas: <small>200000</small></p>
@@ -127,7 +127,7 @@ export default class FAQ extends Component {
 
           <div className="row" style={{position: 'relative', top: 25}}>
             <div className="col text-center text-lg-right">
-              <i class="fas fa-caret-square-left text-info"></i> <Link className="link-muted" to="/">Back to home</Link>
+              <i class="fas fa-caret-square-left text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
             </div>
           </div>
 

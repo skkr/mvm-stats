@@ -8,9 +8,9 @@ const SellPrice = props => {
     <React.Fragment>
       <b>{sellPriceTitle}</b>
       <div className="float-right">
-        <b className="ml-3">USD:</b> {parseFloat(sellPriceUSD).toFixed(6)}
+        <b className="ml-3">USD:</b> <span className="font--alt">{parseFloat(sellPriceUSD).toFixed(6)}</span>
         <span className="ml-3 text-light">|</span>
-        <b className="ml-3">ETH:</b> {parseFloat(sellPriceETH).toFixed(6)}
+        <b className="ml-3">ETH:</b> <span className="font--alt">{parseFloat(sellPriceETH).toFixed(6)}</span>
       </div>
     </React.Fragment>
   )
