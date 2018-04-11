@@ -8,11 +8,11 @@ const CardStat = props => {
       <Link
         onMouseDown={()=>$('[data-toggle="tooltip"]').tooltip('hide') }
         to={link} className="card-icon" data-toggle="tooltip" data-placement="top" title={linkTitle}>
-        <i className="material-icons link-light">help_outline</i>
+        <i className="wicon-help-outline link-light"></i>
       </Link>
-      <i className="material-icons material-icons material-icons--xl">{icon}</i>
+      <i className={`wicon-${icon} text--xl`}></i>
       <h1 className="h5 text-muted"><strong>{mainTitile}</strong></h1>
-      <p className={`font--alt text--xl ${textColor}`}> <strong>{mainValue}</strong></p>
+      <p className={`font--alt text--xxl ${textColor}`}> <strong>{mainValue}</strong></p>
     </div>
   )
 }

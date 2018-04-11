@@ -18,12 +18,12 @@ export default class NotFound extends Component {
 
   render () {
     return (
-      <div id="app-content">
+      <div id="app-content" role="main">
         <div className="container">
           <div className="row">
             <div className="col text-center">
               <h1 className="mb-3"><b>Page not found</b></h1>
-              <i class="fas fa-caret-square-left text-accent"></i> <Link to="/" className="link-muted">Back to home</Link>
+              <i className="wicon-back text--sm text-accent"></i>  <Link to="/" className="link-muted">Back to home</Link>
             </div>
           </div>
         </div>

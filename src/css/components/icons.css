@@ -31,18 +31,7 @@ Font Awesome Icons
 
 */
 
-
-.icon, .material-icons, .fas {
-}
-
-.material-icons--xl {
-  font-size: 43px;
-}
-
-/* Improves the position of the icons inside the titles */
-.material-icons {
-  h2 &, h3 & {position: relative; top: 2px;}
-}
-.svg-inline--fa {
-  h2 &, h3 & {position: relative; top: -2px;}
+[class*="wicon-"] {
+  color: var(--colorDark);
+  font-size: 105%;
 }

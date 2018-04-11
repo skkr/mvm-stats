@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Web3 from 'web3';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const web3 = new Web3();
 
@@ -59,7 +60,7 @@ export default class FAQ extends Component {
     const faqLenght = questions.length;
     var self = this;
     return (
-      <div id="app-content">
+      <div id="app-content" role="main">
 
         <div id="app-hero">
           <div className="container">
@@ -75,8 +76,8 @@ export default class FAQ extends Component {
         <div className="container">
 
           <div className="row">
-            <div className="col text-center text-lg-right">
-              <i class="fas fa-caret-square-left text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
+            <div className="col mb-2 mb-lg-0 text-center text-lg-right">
+              <i className="wicon-back text--sm text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
             </div>
           </div>
 
@@ -92,42 +93,62 @@ export default class FAQ extends Component {
                 questions.map((question, index) =>
                   <React.Fragment key={question[0]}>
                     <h3>
-                      <i className="fas fa-arrow-right fa-xs text-danger  animated tdFadeInRight"></i>&nbsp;
-                      <strong className="animated tdFadeIn">{question[0]}</strong>
+                      <ScrollAnimation animateIn="tdFadeInRight" animateOnce={true} delay={index*350} duration={3}>
+                        <small><i className="wicon-arrow-right text-danger"></i></small>&nbsp;
+                        <strong>{question[0]}</strong>
+                      </ScrollAnimation>
                     </h3>
-                    <p className="text--lg  animated tdFadeIn">{question[1]}</p>
-                    <hr className="mb-4"/>
+                    <ScrollAnimation animateIn="tdFadeIn" animateOnce={true} offset={0} delay={index*350} duration={1}>
+                      <p className="text--lg">{question[1]}</p>
+                    </ScrollAnimation>
+                    <hr className="mb-4 animate tdFadeIn"/>
                   </React.Fragment>
                 )
               }
               <h3>
-                <i className="fas fa-arrow-right fa-xs text-danger  animated tdFadeInRight"></i>&nbsp;
-                <strong className="animated tdFadeIn">Generate Transactions Data</strong>
+                <small>
+                  <i className="wicon-arrow-right text-danger"></i></small>&nbsp;
+                <strong>Generate Transactions Data</strong>
               </h3>
-              <form className="col-4">
-                <div className="form-group">
-                  <label htmlFor="sellAmountInput">Tokens to sell</label>
+
+              <form className="col-12 col-sm-6 col-lg-4  px-0 mt-1">
+                <div className="form-group mb-4">
+                  <label htmlFor="sellAmountInput"><strong className="text--lg">Tokens to sell</strong></label>
                   <input type="number" className="form-control" id="sellAmountInput" min="0" step="0.01" onChange={(event) => {self.generateData(event.target.value)}}/>
                 </div>
               </form>
-              <h4>
-                <strong className="animated tdFadeIn">First Transaction</strong>
-              </h4>
-              <p className="text--lg  animated tdFadeIn">To: <strong>lif.windingtree.eth - 0xeb9951021698b42e4399f9cbb6267aa35f82d59d</strong></p>
-              <p className="text--lg  animated tdFadeIn">Gas: <small>100000</small></p>
-              <p className="text--lg  animated tdFadeIn">Data: <small>{self.state.approveData}</small></p>
-              <h4>
-                <strong className="animated tdFadeIn">Second Transaction</strong>
-              </h4>
-              <p className="text--lg  animated tdFadeIn">To: <strong>mvm.windingtree.eth - 0x27218c41e1054dC0484ACD2aD35DEF0ffd17782A</strong></p>
-              <p className="text--lg  animated tdFadeIn">Gas: <small>200000</small></p>
-              <p className="text--lg  animated tdFadeIn">Data: <small>{self.state.sellTokensData}</small></p>
-            </div>
+
+                <h4>
+                  <strong>First Transaction</strong>
+                </h4>
+                <ul className="list-unstyled mb-3">
+                  <li className="text--lg">
+                    <b className="mr-2">To:</b> <span className="text-info">lif.windingtree.eth</span>
+                    <small className="text--xs ml-2 mr-2">►</small>
+                    <em className="text--lg text--breakword text-muted">0xeb9951021698b42e4399f9cbb6267aa35f82d59d</em>
+                  </li>
+                  <li className="text--lg"><b className="mr-2">Gas:</b> <span className="text-muted">100000</span></li>
+                  <li className="text--lg"><b className="mr-2">Data:</b> <span className="text-muted text--breakword">{self.state.approveData}</span></li>
+                </ul>
+                <h4>
+                  <strong>Second Transaction</strong>
+                </h4>
+                <ul className="list-unstyled">
+                  <li className="text--lg">
+                    <b className="mr-2">To:</b> <span className="text-info">mvm.windingtree.eth</span>
+                    <small className="text--xs ml-2 mr-2">►</small>
+                    <em className="text--lg text--breakword text-muted">0x27218c41e1054dC0484ACD2aD35DEF0ffd17782A</em>
+                  </li>
+                  <li className="text--lg"><b className="mr-2">Gas:</b> <span className="text-muted">200000</span></li>
+                  <li className="text--lg"><b className="mr-2">Data:</b> <span className="text-muted text--breakword">{self.state.approveData}</span></li>
+                </ul>
+              </div>
+
           </div>
 
           <div className="row" style={{position: 'relative', top: 25}}>
             <div className="col text-center text-lg-right">
-              <i class="fas fa-caret-square-left text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
+              <i className="wicon-back text--sm text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
             </div>
           </div>
 
