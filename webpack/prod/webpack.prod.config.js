@@ -60,6 +60,14 @@ module.exports = {
     // Clean assets (remove unused files)
     new WebpackCleanupPlugin({exclude: ["styleguide/**/*"]}),
 
+    // Copy files from /src to /public
+    new CopyWebpackPlugin([
+      { from: APP_DIR + '/manifest.json', to: BUILD_DIR + '/manifest.json' },
+      { from: APP_DIR + '/service-worker.js', to: BUILD_DIR + '/service-worker.js' },
+      { from: APP_DIR + '/img/', to: BUILD_DIR + '/img/' },
+      { from: APP_DIR + '/font/', to: BUILD_DIR + '/font/' },
+    ]),
+
     // Optimize the images
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
 

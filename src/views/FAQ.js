@@ -76,7 +76,7 @@ export default class FAQ extends Component {
         <div className="container">
 
           <div className="row">
-            <div className="col mb-2 mb-lg-0 text-center text-lg-right">
+            <div className="col mb-4 mb-lg-0 text-center text-lg-right">
               <i className="wicon-back text--sm text-accent"></i> <Link className="link-muted" to="/">Back to home</Link>
             </div>
           </div>
