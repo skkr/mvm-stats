@@ -76,11 +76,13 @@ module.exports = {
       'GIT_REV': JSON.stringify(GIT_REV),
       'VERSION_NUMBER': JSON.stringify(VERSION_NUMBER),
     }),
-    
+
     // Copy files from /src to /public
     new CopyWebpackPlugin([
+      { from: APP_DIR + '/manifest.json', to: BUILD_DIR + '/manifest.json' },
+      { from: APP_DIR + '/service-worker.js', to: BUILD_DIR + '/service-worker.js' },
       { from: APP_DIR + '/font/', to: BUILD_DIR + '/font/' },
-      { from: APP_DIR + '/img/', to: BUILD_DIR + '/img/' }
+      { from: APP_DIR + '/img/', to: BUILD_DIR + '/img/' },
     ]),
   ]
 }
