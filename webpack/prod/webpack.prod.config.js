@@ -8,6 +8,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlMinifier = require('html-minifier').minify
+
 
 const parentDir = path.join(__dirname, '../../');
 const APP_DIR = path.resolve(parentDir, 'src');
@@ -78,19 +80,21 @@ module.exports = {
     new ExtractTextPlugin('app.css'),
     new HtmlWebpackPlugin({
       filename: BUILD_DIR + '/index.html',
-      template: APP_DIR + '/index.template.html'
+      template: APP_DIR + '/index.template.html',
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeAttributeQuotes: true
+      }
     }),
     new webpack.DefinePlugin({
       'GIT_REV': JSON.stringify(GIT_REV),
       'VERSION_NUMBER': JSON.stringify(VERSION_NUMBER),
     }),
-
-    // Copy files from /src to /public
-    new CopyWebpackPlugin([
-      { from: APP_DIR + '/manifest.json', to: BUILD_DIR + '/manifest.json' },
-      { from: APP_DIR + '/service-worker.js', to: BUILD_DIR + '/service-worker.js' },
-      { from: APP_DIR + '/font/', to: BUILD_DIR + '/font/' },
-      { from: APP_DIR + '/img/', to: BUILD_DIR + '/img/' },
-    ]),
   ]
 }
