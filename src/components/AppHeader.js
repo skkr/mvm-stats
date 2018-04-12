@@ -16,9 +16,9 @@ export default class AppHeader extends Component {
 
     return (
       <header id={this.props.id}>
-        <ScrollAnimation hrefLang="en" animateIn="tdFadeInDown" offset={0} duration={2.5}>
+        <ScrollAnimation animateIn="tdFadeInDown" offset={0} duration={2.5}>
           <h1 className="mb-0">
-            <Link to="/" className="brand-wrapper brand-wrapper--alpha">
+            <Link to="/" hrefLang="en" className="brand-wrapper brand-wrapper--alpha">
               <img className="brand" src={lifLogo} alt="WindingTree Lif"/>
             </Link>
           </h1>
